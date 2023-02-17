@@ -8,4 +8,4 @@ if __name__ == "__main__":
             for word in line.split(' '):
                 if (word.lower().startswith(tuple(vowels)) and
                         word.lower().endswith(tuple(vowels))):
-                    print(word, end=', ')
+                    print(word, end=' ')
