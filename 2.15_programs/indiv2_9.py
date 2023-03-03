@@ -27,7 +27,7 @@ if __name__ == "__main__":
         if len(pwd) > 10:
             pwd = ""
         # Проверка на невозможность создания пароля из заданных слов
-        if error_cnt > 500:
+        if error_cnt > len(words):
             print("Из слов невозможно создать пароль!", file=sys.stderr)
             exit(1)
     print(f"Сгенерированный пароль: {pwd}")
