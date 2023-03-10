@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
-from random import randint
+from random import choice
 
 if __name__ == "__main__":
     words = []
@@ -19,8 +19,8 @@ if __name__ == "__main__":
     words = [i for i in words if len(i) >= 3]
 
     while len(pwd) < 8:
-        word1 = words[randint(0, len(words) - 1)].capitalize()
-        word2 = words[randint(0, len(words) - 1)].capitalize()
+        word1 = choice(words).capitalize()
+        word2 = choice(words).capitalize()
         if word1 != word2:
             pwd = f"{word1}{word2}"
         error_cnt += 1
