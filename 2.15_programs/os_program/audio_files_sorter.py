@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import os
-import shutil
 
 # Разложить аудиофайлы по папкам с именами исполнителей,
 # указанных в имени файла перед знаком ' - '.
@@ -16,6 +15,4 @@ if __name__ == "__main__":
         if file_ext in audio_ext:
             artist = filename.rpartition(" - ")[0]
             os.mkdir(artist)
-            # Скопировать/переместить файл через os не получилось
-            shutil.copy(f"{filename}", f"{artist}/{filename}")
-            os.remove(f"{filename}")
+            os.replace(f"{filename}", f"{artist}/{filename}")
