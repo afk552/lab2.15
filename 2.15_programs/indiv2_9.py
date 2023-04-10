@@ -5,14 +5,12 @@ import sys
 from random import choice
 
 if __name__ == "__main__":
-    words = []
     pwd = ""
     error_cnt = 0
     with open("indiv2_words.txt", "r", encoding="utf-8") as fileptr:
-        for line in fileptr.read().splitlines():
-            words.append(line)
+        words = fileptr.readlines()
 
-    if len(words) < 0 or len(words) == 1:
+    if len(words) == 1:
         print("В файле недостаточно слов!", file=sys.stderr)
         exit(1)
     # Отбрасываем слова менее чем из трех букв

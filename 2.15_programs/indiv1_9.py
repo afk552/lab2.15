@@ -9,5 +9,6 @@ if __name__ == "__main__":
             words.append(line)
 
     for word in words:
-        if word.lower().startswith(vowels) and word.lower().endswith(vowels):
+        temp_low = word.lower()
+        if temp_low.startswith(vowels) and temp_low.endswith(vowels):
             print(word, end=" ")
